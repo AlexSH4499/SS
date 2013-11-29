@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 
 public class Game extends Canvas {
 	public Game(){
-		Game g;
+	
 		Framework.gameState = Framework.gameState.GAME_CONTENT_LOADING;
 		
 		Thread threadForInitGame = new Thread(){
@@ -37,12 +37,9 @@ public class Game extends Canvas {
 	}
 	private void LoadContent(){
 		
-		try {
-			Game.loadImage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		loadContent lc;
+		
+		lc.loadImage();
 	}
 	
 	
@@ -53,15 +50,14 @@ public class Game extends Canvas {
 
 	public void Draw(Graphics2D g2)//add back mousePosition
 	{
-		g2.drawRect(800, 800,800,800);
-		g2.fillRect(800, 800,800,800);
+		g2.drawRect(1920, 1920,1080,1080);
+		g2.fillRect(1920, 1920,1080,1080);
 		g2.drawImage(img, 1920, 1920, 1080, 1080, null);
-		g2.dispose();
+	
 	}
 
 	public void UpdateGame(long gameTime, Point mousePosition) {
-		// TODO Auto-generated method stub
-		
+	//add if keys get pressed, update
 	}
 	
 
