@@ -41,17 +41,15 @@ public class Game extends Canvas {
 	
 	private void Initialize()
 		{
-		 	g.add(img1);
-		 	g.add(img2);
-		 	g.add(img3);
+		 
 		 	
 		}
 	private void LoadContent()
 	 {
 		
-		loadContent lc;
 		
-		lc.loadImage();
+		
+		g.loadImage();
 	 } 
 	
 	
@@ -73,7 +71,7 @@ public class Game extends Canvas {
 	}
 
 	public void UpdateGame(long gameTime, Point mousePosition) {
-	//add if keys get pressed, update
+	         long gameTime gT =  
 	}
 	
 
