@@ -46,7 +46,7 @@ import javax.swing.JPanel;
 			
 		
 			JPanel panel = (JPanel) container.getContentPane();
-			panel.setPreferredSize(new Dimension(800,600));
+			panel.setPreferredSize(new Dimension(1080,720));
 			panel.setLayout(null);
 			
 			
@@ -77,7 +77,7 @@ import javax.swing.JPanel;
 
 			// create the buffering strategy which will allow AWT
 			// to manage our accelerated graphics
-			createBufferStrategy(1);
+			createBufferStrategy(2);
 			strategy = getBufferStrategy();
 			
 			// initialize the entities in our game so there's something
@@ -140,7 +140,7 @@ import javax.swing.JPanel;
 				// surface and blank it out
 				Graphics2D g = (Graphics2D) strategy.getDrawGraphics();
 				g.setColor(Color.black);
-				g.fillRect(0,0,800,600);
+				g.fillRect(0,0,1080,720);
 				
 				// cycle round asking each entity to move itself
 				if (!waitingForKeyPress) {
