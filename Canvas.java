@@ -16,7 +16,8 @@ public abstract class Canvas extends JPanel implements KeyListener, MouseListene
 	private static boolean[] keyboardState = new boolean[525];
 	private static boolean[] mouseState = new boolean[3];
 	
-	public Canvas(){
+	public Canvas()
+	{
 		//double buufer to draw on screen 
 		this.setDoubleBuffered(true);
 		this.setFocusable(true);
@@ -27,12 +28,13 @@ public abstract class Canvas extends JPanel implements KeyListener, MouseListene
 	//		BufferedImage blankCursorImg = new BufferedImage(16,16 BufferedImage.TYPE_INT_ARGB);
 		//	Cursor blankCursor = Toolkit.getDefaultToolkit().createCustomCursor(blankCursorImg, new Point(0,0), null);
 			//this.setCursor(blankCursor);
-//		}
+	//	}
 		
 		this.addKeyListener(this);
 		this.addMouseListener(this);
 	}
-		public void paintComponent(Graphics g){
+		public void paintComponent(Graphics g)
+		{
 			Graphics2D g2 = (Graphics2D)g;
 			super.paintComponent(g2);// if fails change back to Graphics g
 			Draw(g2);
@@ -40,22 +42,28 @@ public abstract class Canvas extends JPanel implements KeyListener, MouseListene
 		
 		
 		/// CONTROL LISTENERS
-		public static boolean keyboardKeyState(int key){
+		public static boolean keyboardKeyState(int key)
+		{
 			return keyboardState[key];
 		}
+		
 		@Override
-		public void keyPressed(KeyEvent e){
+		public void keyPressed(KeyEvent e)
+		{
 			keyboardState[e.getKeyCode()]=false;
 		
-             keyReleasedFramework(e);
+	             	keyReleasedFramework(e);
 		}
+		
 		@Override
 		public void keyTyped(KeyEvent  e){}
 		public abstract void keyReleasedFramework(KeyEvent e);
 		
-		public static boolean mouseButtonState(int button){
+		public static boolean mouseButtonState(int button)
+		{
 			return mouseState[button -1];
 		}
+		
 		private void mouseKeyStatus(MouseEvent e, boolean status)
 		{
 			if(e.getButton()== MouseEvent.BUTTON1)
@@ -67,20 +75,27 @@ public abstract class Canvas extends JPanel implements KeyListener, MouseListene
 		}
 		
 		@Override
-		public void mousePressed(MouseEvent e){
+		public void mousePressed(MouseEvent e)
+		{
 			mouseKeyStatus(e, true);
 		}
+		
 		@Override
 		public void mouseReleased(MouseEvent e){
 			mouseKeyStatus(e,false);
 		}
+		
 		@Override
 		public void mouseClicked(MouseEvent e){}
+		
 		@Override
 		public void mouseEntered(MouseEvent e){}
+		
 		@Override
 		public void mouseExited(MouseEvent e ){}
-		public void Draw(Graphics2D g2) {
+		
+		public void Draw(Graphics2D g2)
+		{
 			// TODO Auto-generated method stub
 			
 		}
